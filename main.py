@@ -108,4 +108,5 @@ def contact_us():
     return render_template('contactus.html')
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=env.PROCESS.PORT||8080, debug=True)
+    port = int(os.environ.get("PORT", 8080))  # Use the PORT environment variable or 8080 as default
+    app.run(host='0.0.0.0', port=port, debug=True)
